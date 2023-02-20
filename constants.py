@@ -12,4 +12,7 @@ LOGIN_HEADERS = {
 }
 COLOR_ENDPOINT = 'https://api.baubuddy.de/dev/index.php/v1/labels/'
 LOGIN_ENDPOINT = "https://api.baubuddy.de/index.php/login"
-VEHICLES_ENDPOINT = 'https://api.baubuddy.de/dev/index.php/v1/vehicles/select/active/'
+VEHICLES_ENDPOINT = (
+    'https://api.baubuddy.de/dev/index.php/v1/vehicles/'
+    'select/active/'
+)

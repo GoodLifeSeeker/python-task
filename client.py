@@ -4,7 +4,6 @@ import json
 import openpyxl
 import requests
 
-from dateutil.relativedelta import relativedelta
 from datetime import datetime, timedelta
 from openpyxl.styles import Font, PatternFill
 from os.path import join, abspath
@@ -33,7 +32,7 @@ def create_excel(data, columns, colored, path):
         worksheet.cell(row=1, column=col+1, value=column_name)
         if column_name == 'labelIds':
             label_ids_col_idx = col
-    
+
     # Filling the table with data returned from server
     for row, item in enumerate(data, start=2):
         for col, column_name in enumerate(columns):
@@ -55,11 +54,11 @@ def create_excel(data, columns, colored, path):
                 fill_color = colors[2][1:]
 
             for cell in worksheet[row]:
-                    cell.fill = PatternFill(
-                        start_color=fill_color, 
-                        end_color=fill_color, 
-                        fill_type='solid'
-                    )
+                cell.fill = PatternFill(
+                    start_color=fill_color,
+                    end_color=fill_color,
+                    fill_type='solid'
+                )
     # Coloring row's font if there's 'labelIds' field and it's not empty
     if label_ids_col_idx:
         for row in worksheet.iter_rows(min_row=2):
@@ -70,7 +69,6 @@ def create_excel(data, columns, colored, path):
                     cell.font = font
     # Saving excel file
     workbook.save(path)
-
 
 
 # Preparing paths
@@ -93,8 +91,8 @@ else:
 # Working with input parameters
 # Common
 parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('-k', '--keys', nargs='+', help='additional keys to include')
-parser.add_argument('-c', '--colored', default=True, help='flag to enable row coloring')
+parser.add_argument('-k', '--keys', nargs='+', help='additional keys')
+parser.add_argument('-c', '--colored', default=True, help='flag to coloring')
 args = parser.parse_args()
 
 # -k/--keys part
