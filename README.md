@@ -54,7 +54,7 @@ $ python server.py
 $ python client.py
 (If 'python' command doesn't work, use 'python3')
 ```
-6) Find excel file in the root folder of the project
+6) You can find excel file in the root folder of the project
 
 
 # Task
