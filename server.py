@@ -100,7 +100,7 @@ def upload():
     api_response = api_modify(api_response)
     api_response = get_color_data(api_response, vehicles_headers)
 
-    # Preparing data to return
+    # Preparation data to return
     json_to_return = merge_data(csv_cars, api_response)
     json_to_return = hu_filter(json_to_return)
     return json_to_return

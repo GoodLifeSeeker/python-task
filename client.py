@@ -71,7 +71,7 @@ def create_excel(data, columns, colored, path):
     workbook.save(path)
 
 
-# Preparing paths
+# Preparation paths
 current_date = datetime.now().date().isoformat()
 excel_name = f'vehicles_{current_date}.xlsx'
 excel_path = abspath(join('.', excel_name))
