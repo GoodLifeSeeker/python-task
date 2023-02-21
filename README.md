@@ -1,13 +1,61 @@
-Hello dear python dev!
+#  VERO Digital Solutions task
+![Python version](https://img.shields.io/badge/python-3.8-yellow) 
+![Flask version](https://img.shields.io/badge/flask-2.2-red)
+![Openpyxl version](https://img.shields.io/badge/openpyxl-3.1-green)
 
-This repository is supposed to act as a playground for your submission.
+## Solution's description
 
-Before getting started, please make sure use this repository as a **template** and create your own **public** repository, on which you will commit and push your code regularly. 
-Once you are ready, please mail us back the link to your repository. 
+The task is below. Here is the solution:
+We create 2 python files and 1 extra file for constants:
 
-Below, you will find the **Task** definition.
+### Client
+1) Creates the name for the future excel file;
+2) Analyzes csv file;
+3) Sends post request with csv data to server and recieves merged data as response;
+4) Analyzes its own running parameters as `-k/--keys` and `-c/--colored`
+5) Creates excel file with columns which were called as -k parameters and fills the file with merged data. If there ware not `-k` parameters, it takes all the fields of dictionaries in responce.
+6) Colors the cells and font according to the task
 
-Happy Hacking :computer:
+### Server
+1) Recieves csv data from client;
+2) Sends post request to authorization endpoint and recieves a token
+3) Using the token sends get request to main endpoint and recieves data
+4) Merges data from csv and data from responce
+5) Filters out any resources that do not have a value set for `hu` field
+6) Returns the result to client
+
+## Running programm
+1) Clone repository:
+```
+$ git clone git@github.com:GoodLifeSeeker/python-task.git
+```
+2) Install and activate virtual environment:
+```
+- For Mac or Linux:
+$ python3 -m venv venv
+$ source venv/bin/activate
+
+- For Windows
+$ python -m venv venv
+$ source venv/Scripts/activate 
+``` 
+3) Install dependencies from requirements.txt.
+```
+$ pip install -r requirements.txt
+```
+4) Run server.py
+```
+$ python server.py
+(If 'python' command doesn't work, use 'python3')
+```
+
+5) Open another terminal and run client.py
+```
+$ python client.py
+(If 'python' command doesn't work, use 'python3')
+```
+6) Find excel file in the root folder of the project
+
 
 # Task
 
