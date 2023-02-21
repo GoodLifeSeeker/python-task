@@ -24,7 +24,7 @@ We create 2 python files and 1 extra file for constants:
 5) Filters out any resources that do not have a value set for `hu` field
 6) Returns the result to client
 
-## Running programm
+## Running program
 1) Clone repository:
 ```
 $ git clone git@github.com:GoodLifeSeeker/python-task.git
